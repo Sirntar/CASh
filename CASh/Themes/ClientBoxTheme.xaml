@@ -1,0 +1,222 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style BasedOn="{StaticResource {x:Type Button}}"
+           TargetType="{x:Type Button}"
+           x:Key="ClientBoxSaveButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- Normal -->
+                        <Border Name="Border"
+                                Height="30"
+                                Width="199"
+                                Cursor="Hand"
+                                BorderBrush="#6176BF" 
+                                BorderThickness="1"
+                                Background="#6176BF">
+                            <ContentPresenter Name="Text"
+                                TextBlock.Foreground="#BBBBBB"
+                                TextBlock.FontFamily="Arial"
+                                TextBlock.FontWeight="Normal"
+                                TextBlock.FontSize="16"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Content="{TemplateBinding Content}" />
+                        </Border>
+
+                        <!-- Hover -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#8091cb" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#a3a3a3" />
+                                <Setter TargetName="Text" Property="TextBlock.Foreground" Value="#f1f1f1" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type Button}}"
+           TargetType="{x:Type Button}"
+           x:Key="ClientBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- Normal -->
+                        <Border Name="Border"
+                                Height="30"
+                                Width="199"
+                                Cursor="Hand"
+                                BorderBrush="{x:Null}" 
+                                BorderThickness="0" 
+                                Background="#1E2023">
+                            <ContentPresenter Name="Text"
+                                TextBlock.Foreground="#BBBBBB"
+                                TextBlock.FontFamily="Arial"
+                                TextBlock.FontWeight="Normal"
+                                TextBlock.FontSize="16"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Content="{TemplateBinding Content}" />
+                        </Border>
+
+                        <!-- Hover -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#2C2F33" />
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#545559" />
+                                <Setter TargetName="Text" Property="TextBlock.Foreground" Value="#f1f1f1" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type Button}}"
+           TargetType="{x:Type Button}"
+           x:Key="ClientBoxDeleteButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- Normal -->
+                        <Border Name="Border"
+                                Height="30"
+                                Width="199"
+                                Cursor="Hand"
+                                BorderBrush="#8b3532" 
+                                BorderThickness="1"
+                                Background="#9B3B38">
+                            <ContentPresenter Name="Text"
+                                TextBlock.Foreground="#BBBBBB"
+                                TextBlock.FontFamily="Arial"
+                                TextBlock.FontWeight="Normal"
+                                TextBlock.FontSize="16"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Content="{TemplateBinding Content}" />
+                        </Border>
+
+                        <!-- Hover -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#a54e4b" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#a3a3a3" />
+                                <Setter TargetName="Text" Property="TextBlock.Foreground" Value="#f1f1f1" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type DataGrid}}"
+           TargetType="{x:Type DataGrid}"
+           x:Key="DataGridClientStyle">
+        <Setter Property="ColumnHeaderStyle" Value="{DynamicResource HeaderClientStyle}"/>
+        <Setter Property="RowStyle" Value="{DynamicResource RowClientStyle}"/>
+        <Setter Property="CellStyle" Value="{DynamicResource CellClientStyle}"/>
+        <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
+        <Setter Property="HorizontalGridLinesBrush" Value="transparent" />
+    </Style>
+
+    <Style x:Key="HeaderClientStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Background" Value="#DDDDDE" />
+        <Setter Property="Foreground" Value="#222222" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="Arial" />
+
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="5, 0, 5, 0" />
+
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="#eaeaeb" />
+
+        <Setter Property="Cursor" Value="Hand" />
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="ToolTip" Value="Click to sort"/>
+
+                <Setter Property="Background" Value="#c6c6c7" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="RowClientStyle" TargetType="DataGridRow">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Background" Value="#fff" />
+        <Setter Property="Foreground" Value="#222222" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="Arial" />
+
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+
+        <Setter Property="Padding" Value="5, 0, 5, 0" />
+
+        <Setter Property="BorderThickness" Value="0" />
+
+        <Setter Property="Cursor" Value="Hand" />
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="ToolTip" Value="Click to Edit"/>
+
+                <Setter Property="Background" Value="#c6c6c7" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#6176BF"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CellClientStyle" TargetType="DataGridCell">
+        <Setter Property="TextBlock.TextAlignment" Value="Left" />
+
+        <Setter Property="BorderThickness" Value="0" />
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="ToolTip" Value="Click to Edit"/>
+
+                <Setter Property="Background" Value="#c6c6c7" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BorderThickness" Value="0" />
+
+                <Setter Property="Background" Value="#6176BF"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="HeaderCellClientStyle" TargetType="DataGridCell">
+        <Setter Property="TextBlock.TextAlignment" Value="Left" />
+
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="ToolTip" Value="Click to Edit"/>
+
+                <Setter Property="Background" Value="#c6c6c7" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BorderThickness" Value="0" />
+
+                <Setter Property="Background" Value="#6176BF"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="CASh.MVVM.View.B2BView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CASh.MVVM.View" 
+             xmlns:viewmodel="clr-namespace:CASh.MVVM.ViewModel" 
+             d:DataContext="{d:DesignInstance Type=viewmodel:B2BViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="620" d:DesignWidth="1140">
+    <Grid>
+        <DataGrid x:Name="ClientsData" Grid.Row="1" 
+                  Background="Transparent"
+                  BorderBrush="#545559"
+                  ItemsSource="{Binding BusinessCustomersList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding Selected}"
+                  HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  SelectionMode="Single"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False"
+                  Style="{StaticResource DataGridStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" 
+                                    CellStyle="{StaticResource CellRightAligmentStyle}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="210"
+                                    CellStyle="{StaticResource CellLeftAligmentStyle}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="100"
+                                    CellStyle="{StaticResource CellLeftAligmentStyle}" />
+                <DataGridTextColumn Header="Phone Number" Binding="{Binding PhoneNumber}" Width="100" 
+                                    CellStyle="{StaticResource CellRightAligmentStyle}" />
+                <DataGridTextColumn Header="Spend" Binding="{Binding TotalMoneySpend}" Width="80"
+                                    CellStyle="{StaticResource CellRightAligmentStyle}"/>
+
+
+                <DataGridTextColumn Header="VATIN" Binding="{Binding VATIN}" Width="110"
+                                    CellStyle="{StaticResource CellLeftAligmentStyle}"/>
+                <DataGridTextColumn Header="IBAN" Binding="{Binding IBAN}" Width="150"
+                                    CellStyle="{StaticResource CellLeftAligmentStyle}"/>
+
+                <DataGridTextColumn Header="orderCounter" Binding="{Binding OrderCounter}"
+                                    CellStyle="{StaticResource CellRightAligmentStyle}"/>
+                <DataGridTextColumn Header="rmaCounter" Binding="{Binding RmaCounter}"
+                                    CellStyle="{StaticResource CellRightAligmentStyle}"/>
+                <DataGridTextColumn Header="UpdatedAt" Binding="{Binding UpdatedAt, StringFormat=d}"
+                                    CellStyle="{StaticResource CellRightAligmentStyle}"/>
+                <DataGridTextColumn Header="CreatedAt" Binding="{Binding CreatedAt, StringFormat=d}"
+                                    CellStyle="{StaticResource CellRightAligmentStyle}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
